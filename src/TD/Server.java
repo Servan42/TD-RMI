@@ -29,12 +29,14 @@ public class Server {
     }
     // installation d'un securityManager
     // A COMPLETER : INSTALLATIOND'UN SECURITYMANAGER
-    // A COMPLETER : MISE EN PLACE DU REGISTRY
+    
     try {
-      for(int i=1;i<=nombre;i++){
-      	// A COMPLETER : CONSTRUCTION ET EXPORTATION DES OBJETS DISTANTS
-      }
-      System.out.println("Tous les objets sont enregistrés dans le serveur d'objets distants");
+    	LocateRegistry.createRegistry(2001);  
+    	for(int i=1;i<=nombre;i++){
+    		Supplier obj = new Supplier();
+    		java.rmi.Naming.bind("//localhost:2001/Supplier"+i, obj);
+    	}
+    	System.out.println("Tous les objets sont enregistrés dans le serveur d'objets distants");
     } catch (Exception e) {
       System.out.println("Server err: " + e);
     }

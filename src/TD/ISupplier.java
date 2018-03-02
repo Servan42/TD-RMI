@@ -7,7 +7,7 @@ import java.rmi.RemoteException;
  */
 public interface ISupplier extends Remote {
 	/**
-	 * renvoie la velur de la propriété os.name
+	 * renvoie la valeur de la propriété os.name
 	 * @return la valeur de os.name
 	 * @throws RemoteException
 	 */
