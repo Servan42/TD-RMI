@@ -9,8 +9,9 @@ public class Server {
 			
 			LocateRegistry.createRegistry(2001);
 			java.rmi.Naming.bind("//localhost:2001/FrenchToEnglishTranslator", obj);
+			System.out.println("Serveur et registre opérationels");
 		} catch(Exception e) {
-			System.out.println("C'est la panique\n" + e);
+			System.out.println("C'est la panique "+e.toString());
 		}
 	}
 }
