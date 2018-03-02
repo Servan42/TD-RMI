@@ -9,8 +9,8 @@ public class Client {
 		try{
 			// Si rmiregistery ne tourne pas sur la machine courante, il faut
 			// remplacer localhost par le nom de la machine qui héberge le rmiregisteri
-			FrenchToEnglish obj = (FrenchToEnglish) java.rmi.Naming.lookup("//localhoast:2001/FrenchToEnglishTranslator");
-			String word = obj.translate(args[0]);
+			FrenchToEnglish obj = (FrenchToEnglish) java.rmi.Naming.lookup("//localhost:2001/FrenchToEnglishTranslator");
+			String word = obj.translate(args[(args.length>1)?1:0]);
 			System.out.println(word);
 		} catch (Exception e) {
 			e.printStackTrace();
