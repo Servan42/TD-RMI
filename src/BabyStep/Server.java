@@ -8,9 +8,10 @@ public class Server {
 			FrenchToEnglish obj = new FrenchToEnglishImpl();
 			
 			LocateRegistry.createRegistry(2001);
-			java.rmi.Naming.bind("localhost:2001/FrenchToEnglishTranslator", obj);
+			java.rmi.Naming.bind("//localhost:2001/FrenchToEnglishTranslator", obj);
+			System.out.println("Serveur et registre opérationels");
 		} catch(Exception e) {
-			System.out.println("C'est la panique");
+			System.out.println("C'est la panique "+e.toString());
 		}
 	}
 }
