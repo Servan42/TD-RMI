@@ -29,8 +29,8 @@ public class Customer extends Thread {
 	public void run(){
 		try{
 			synchronized (Customer.class){
-				System.out.print(this + "->" + "://" + ou + "/" + qui + num);
-				obj = (ISupplier) java.rmi.Naming.lookup(fullName);;
+				System.out.print(this + "->" + fullName);
+				obj = (ISupplier) java.rmi.Naming.lookup(fullName);
 				System.out.println(" est lié a " + obj.name());
 			}
 			try{sleep((int) (Math.random() * 1000));}catch(Exception e){}
