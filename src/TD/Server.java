@@ -34,7 +34,7 @@ public class Server {
     	LocateRegistry.createRegistry(2001);  
     	for(int i=1;i<=nombre;i++){
     		Supplier obj = new Supplier();
-    		java.rmi.Naming.bind("//localhost:2001/Supplier"+i, obj);
+    		java.rmi.Naming.bind("//localhost:2001/"+nom+i, obj);
     	}
     	System.out.println("Tous les objets sont enregistrés dans le serveur d'objets distants");
     } catch (Exception e) {
