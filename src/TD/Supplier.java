@@ -1,12 +1,13 @@
 package TD;
 
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-public class Supplier implements ISupplier {
+public class Supplier extends UnicastRemoteObject implements ISupplier {
 	private int id;
 	private String nom;
 
-	public Supplier(String nom, int id) {
+	public Supplier(String nom, int id) throws RemoteException {
 		this.nom = nom;
 		this.id = id;
 	}

@@ -24,7 +24,7 @@ public class Customer extends Thread {
 	 * @param client numéro du C
 	 */
 	public  Customer(String ou, String qui, int num, int client) {
-		this.ou=ou; this.qui=qui; this.num=num; this.client=client; this.fullName = "://" + ou + "/" + qui + num;
+		this.ou=ou; this.qui=qui; this.num=num; this.client=client; this.fullName = "//" + ou + "/" + qui + num;
 	}
 	public void run(){
 		try{
