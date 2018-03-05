@@ -14,7 +14,7 @@ public class Customer extends Thread {
 			if(m.getName().equals("question")) nbQuestion++;
 	}
 	
-	String ou, qui; int num, client;
+	String ou, qui, fullName; int num, client;
 	private ISupplier obj;
 	/**
 	 * 
@@ -24,13 +24,13 @@ public class Customer extends Thread {
 	 * @param client numéro du C
 	 */
 	public  Customer(String ou, String qui, int num, int client) {
-		this.ou=ou; this.qui=qui; this.num=num; this.client=client;
+		this.ou=ou; this.qui=qui; this.num=num; this.client=client; this.fullName = "://" + ou + "/" + qui + num;
 	}
 	public void run(){
 		try{
 			synchronized (Customer.class){
 				System.out.print(this + "->" + "://" + ou + "/" + qui + num);
-				// A COMPLETER : ACQUISITION DE L'OBJET DISTANT
+				obj = (ISupplier) java.rmi.Naming.lookup(fullName);;
 				System.out.println(" est lié a " + obj.name());
 			}
 			try{sleep((int) (Math.random() * 1000));}catch(Exception e){}
