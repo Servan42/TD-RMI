@@ -26,4 +26,13 @@ public interface ISupplier extends Remote {
 	 * @throws RemoteException
 	 */
 	public String name() throws RemoteException;
+	
+	/**
+	* met à jour le paramètre s en le complétant par <valeur de la
+	propriété correspondante>
+	* @param s
+	*/
+	public void question(Appendable s) throws RemoteException;
+	
+	public IProperty question(StringBuilder s) throws RemoteException;
 }

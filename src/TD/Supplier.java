@@ -1,9 +1,11 @@
 package TD;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class Supplier extends UnicastRemoteObject implements ISupplier {
+	static final long serialVersionUID=42;
 	private int id;
 	private String nom;
 
@@ -37,4 +39,20 @@ public class Supplier extends UnicastRemoteObject implements ISupplier {
 		return nom+id;
 	}
 
+	@Override
+	public void question(Appendable s) throws RemoteException{
+		System.out.println("calling question(Appendable)");
+		try {
+			s.append(question(s.toString()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public IProperty question(StringBuilder s) throws RemoteException{
+		System.out.println("calling question(StringBuilder)");
+		return new Property(System.getProperty(s.toString()));
+	}
 }

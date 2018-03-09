@@ -1,5 +1,4 @@
 package TD;
-import java.rmi.Naming;
 import java.util.Random;
 
 /**
@@ -42,6 +41,16 @@ public class Customer extends Thread {
 					}case 1: { // cas de l'utilisation de question(String)
 						String s = select();
 						System.out.println(this + "->" + obj.name() + ".question(" + s + ") = " + obj.question(s));
+						break;
+					}case 2: { // cas de l'utilisation de question(StringBuffer){
+						Appendable d = new StringBuffer(select());
+						System.out.print(this+"->"+obj.name() + ".question("+d+") = ");
+						obj.question(d);
+						System.out.println(d);
+						break;
+					}case 3 :{ // cas de l'utilisation de question(StringBuilder){
+						StringBuilder d = new StringBuilder(select());
+						System.out.println(this+"->"+obj.name()+".question("+d+") = "+obj.question(d).value());
 						break;
 					}default: {
 						System.err.println(this + "->" + obj.name() + " question inconnue");
