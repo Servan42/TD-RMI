@@ -26,6 +26,11 @@ public class Client {
 		}	
 		// installation d'un securityManager 
 		// A COMPLETER : INSTALLATION DU SECURITYMANAGER
+		// Crée et installe un Security Manager, necessaire seulement si le code est téléchargé
+		if(System.getSecurityManager() == null){
+			System.setSecurityManager(new SecurityManager());
+		}
+		
 		// Démarrage des consommateurs
 		for(int i=0;i<nombre;i++)  {
 			new Customer(host,nom,((int)(Math.random()*num))+1,i).start();
