@@ -29,6 +29,10 @@ public class Server {
     }
     // installation d'un securityManager
     // A COMPLETER : INSTALLATIOND'UN SECURITYMANAGER
+	// Crée et installe un Security Manager, necessaire seulement si le code est téléchargé
+	if(System.getSecurityManager() == null){
+		System.setSecurityManager(new SecurityManager());
+	}
     
     try {
     	LocateRegistry.createRegistry(2001);  

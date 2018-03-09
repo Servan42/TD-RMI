@@ -4,6 +4,11 @@ import java.rmi.registry.LocateRegistry;
 
 public class Server {
 	public static void main(String args[]) {
+		
+		// Crée et installe un Security Manager, necessaire seulement si le code est téléchargé
+//		if(System.getSecurityManager() == null){
+//			System.setSecurityManager(new SecurityManager());
+//		}
 		try {
 			FrenchToEnglish obj = new FrenchToEnglishImpl();
 			
