@@ -45,7 +45,7 @@ public class Customer extends Thread {
 					}case 2: { // cas de l'utilisation de question(StringBuffer){
 						Appendable d = new StringBuffer(select());
 						System.out.print(this+"->"+obj.name() + ".question("+d+") = ");
-						obj.question(d);
+						d = obj.question(d);
 						System.out.println(d);
 						break;
 					}case 3 :{ // cas de l'utilisation de question(StringBuilder){

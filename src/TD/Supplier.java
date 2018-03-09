@@ -40,7 +40,7 @@ public class Supplier extends UnicastRemoteObject implements ISupplier {
 	}
 
 	@Override
-	public void question(Appendable s) throws RemoteException{
+	public Appendable question(Appendable s) throws RemoteException{
 		System.out.println("calling question(Appendable)");
 		try {
 			s.append(question(s.toString()));
@@ -48,6 +48,7 @@ public class Supplier extends UnicastRemoteObject implements ISupplier {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return s;
 	}
 	
 	@Override

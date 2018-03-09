@@ -32,7 +32,7 @@ public interface ISupplier extends Remote {
 	propriété correspondante>
 	* @param s
 	*/
-	public void question(Appendable s) throws RemoteException;
+	public Appendable question(Appendable s) throws RemoteException;
 	
 	public IProperty question(StringBuilder s) throws RemoteException;
 }
